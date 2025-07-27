@@ -1,0 +1,47 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="main-content">
+  <div class="content-wrapper">
+    <h1>Choisir votre Site :</h1>
+
+    <div class="label-container">
+      <!-- CODE SITE -->
+      <div class="codeSite">
+        <label>Choix Du Code Site :</label>
+        <div class="custom-select-container">
+          <div id="codeSiteDropdownToggle" class="select-display" onclick="toggleCodeSiteDropdown()">- Code Site -</div>
+          <div id="codeSiteDropdown" class="dropdown">
+            <div class="option" onclick="selectCodeSiteOption('- Select All -', true)">- Select All -</div>
+            <div class="option">
+              <input id="customCodeInput" type="text" placeholder="Entrer un code..." oninput="selectCodeSiteOption(this.value, false)" />
+            </div>
+          </div>
+        </div>
+        <div id="codeSiteError" class="error-message"></div>
+        
+      </div>
+      <!-- SOUS-TABLE -->
+      <div class="sousTable">
+        <label>Choix Du Sous-Tableau :</label>
+        <div class="custom-select-container">
+          <div id="subDropdownToggle" class="select-display" onclick="toggleSubDropdown()">- Type -</div>
+          <div id="subDropdown" class="dropdown scrollable">
+            <div class="option" onclick="toggleSubOption(this)">- Select All -</div>
+            <div class="option" onclick="toggleSubOption(this)">Codification</div>
+            <div class="option" onclick="toggleSubOption(this)">Coordonnées Enérgitique </div>
+            <div class="option" onclick="toggleSubOption(this)">Données Construction</div>
+            <div class="option" onclick="toggleSubOption(this)">Données Radio</div>
+            <div class="option" onclick="toggleSubOption(this)">Données Environnement</div>
+            <div class="option" onclick="toggleSubOption(this)">Suivi Consommation</div>
+            <div class="option" onclick="toggleSubOption(this)">Données Transmission</div>
+          </div>
+        </div>
+        <div id="subTableError" class="error-message"></div>
+      </div>
+
+    <button class="extract-btn">Extracter</button>
+  </div>
+</div>
+{% endblock %}

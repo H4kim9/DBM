@@ -1,0 +1,144 @@
+{% load static %}
+
+    <div class="sidebar">
+      <div class="menu-btn">
+        <i class="ph ph-brackets-angle"></i>
+      </div>
+      <div class="head">
+        <div class="logo-details">
+          <a href="{% url 'dashboard' %}">
+            <img src="{% static 'images/logo.png' %}" class="logo-img">
+          </a>
+          <p class="logo-divider">___________________________________</p>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="menu">
+          <p class="title">Main</p>
+          <hr>
+          <br>
+          <ul>
+            <!-- Consommation -->
+           <li>
+              <a href="#">
+                <i class="icon ph ph-money"></i>
+                <span class="text">Consommation</span>
+                <i class="arrow ph bold ph-caret-down"></i>
+              </a>
+              <ul class="sub-menu">
+                <li class="has-sub-factorisation">
+                  <a href="#">
+                    <span class="text">Factorisation</span>
+                    <i class="sub-arrow ph bold ph-caret-down"></i>
+                  </a>
+                  <ul class="sub-menu sub-factorisation">
+                    <li>
+                      <a href="#">
+                        <span class="text"> Verification</span>
+                        <i class="sub-arrow ph bold ph-caret-down"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="text">Injection BDD</span>
+                        <i class="sub-arrow ph bold ph-caret-down"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="text">Extraction BDD</span>
+                        <i class="sub-arrow ph bold ph-caret-down"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="has-sub-trafic">
+                  <a href="#">
+                    <span class="text">Trafic</span>
+                    <i class="sub-arrow ph bold ph-caret-down"></i>
+                  </a>
+                  <ul class="sub-menu sub-trafic">
+                    <li><a href="#"><span class="text">Injection BDD</span></a></li>
+                    <li><a href="#"><span class="text">Extraction BDD</span></a></li>
+                  </ul>
+                </li>
+                <li class="has-sub-kwh">
+                  <a href="#">
+                    <span class="text">Volume Kwh</span>
+                    <i class="sub-arrow ph bold ph-caret-down"></i>
+                  </a>
+                  <ul class="sub-menu sub-kwh">
+                    <li><a href="#"><span class="text">Injection BDD</span></a></li>
+                    <li><a href="#"><span class="text">Extraction BDD</span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Parc Inwi -->
+             <li class="{% if 'site' in request.path or 'pop' in request.path or 'dc' in request.path %}active{% endif %}">
+          <a href="#">
+            <i class="icon ph ph-file-text"></i>
+            <span class="text">Parc Inwi</span>
+            <i class="arrow ph bold ph-caret-down"></i>
+          </a>
+          <ul class="sub-menu" style="{% if 'site' in request.path or 'pop' in request.path or 'dc' in request.path %}display: block;{% endif %}">
+            <li class="{% if 'site' in request.path %}active{% endif %}">
+              <a href="{% url 'site' %}">
+                <span class="text">Site</span>
+                <i class="sub-arrow ph ph-caret-right"></i>
+              </a>
+            </li>
+            <li class="{% if 'pop' in request.path %}active{% endif %}">
+              <a href="#">
+                <span class="text">POP</span>
+                <i class="sub-arrow ph ph-caret-right"></i>
+              </a>
+            </li>
+            <li class="{% if 'dc' in request.path %}active{% endif %}">
+              <a href="#">
+                <span class="text">DC</span>
+                <i class="sub-arrow ph ph-caret-right"></i>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Reporting -->
+        <li class="{% if 'reporting' in request.path %}active{% endif %}">
+          <a href="#">
+            <i class="icon ph ph-files"></i>
+            <span class="text">Reporting</span>
+          </a>
+        </li>
+
+        <!-- Calcule des tableaux -->
+        <li class="{% if 'calcule' in request.path %}active{% endif %}">
+          <a href="#">
+            <i class="icon ph ph-calculator"></i>
+            <span class="text">Calcule des tableaux</span>
+          </a>
+        </li>
+        </ul>
+      </div>
+
+        <!-- <div class="menu">
+          <ul class="admin">
+            <li>
+              <a href="#">
+                <span class="text"> Welcome Admin <span style="margin-left: 10px;">|</span></span>
+                <i class="icon ph ph-sign-out"></i>
+              </a>
+            </li>
+
+          </ul>
+        </div> -->
+      </div>
+    </div>
+
+
+
+
+    <!-- Jquery -->
+
+

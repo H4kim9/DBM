@@ -1,0 +1,14 @@
+body{
+    background-color: white;
+}
+#register{
+    color: white;
+    background-color: rgba(165, 65, 138, 1);
+    width: 380px;
+    border-radius: 10px;
+}
+#register-img{
+    width: 120%;
+    height: 100vh;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
